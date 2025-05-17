@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -27,10 +26,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { BloodType, UrgencyLevel } from "@/types";
+import { BloodType, UrgencyLevel, RequestStatus } from "@/types";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
-import { ArrowLeft, Calendar, Clock, Heart, Info } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Heart, Info, MapPin } from "lucide-react";
 
 const requestSchema = z.object({
   bloodType: z.nativeEnum(BloodType, {
@@ -86,7 +85,7 @@ const NewRequest: React.FC = () => {
           zipCode: "00000",
           country: "Unknown"
         },
-        status: "pending",
+        status: RequestStatus.PENDING,
         notes: data.notes,
         expireAt: data.expireAt ? new Date(data.expireAt) : undefined,
       });

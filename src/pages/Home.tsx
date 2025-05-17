@@ -23,6 +23,7 @@ import {
   AlertTriangle,
   User,
   Users,
+  Bell,
 } from "lucide-react";
 
 const Home: React.FC = () => {

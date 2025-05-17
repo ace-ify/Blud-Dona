@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -29,6 +28,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/components/ui/use-toast";
 import { BloodType, UserRole } from "@/types";
 import { User, Mail, Phone, MapPin, Calendar, Heart } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const profileSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
